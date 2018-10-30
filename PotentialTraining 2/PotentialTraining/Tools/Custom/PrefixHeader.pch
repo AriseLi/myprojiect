@@ -1,0 +1,108 @@
+//
+//  PrefixHeader.pch
+//  EarlyRehabilitate
+//
+//  Created by admin on 2017/10/24.
+//  Copyright © 2017年 admin. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#define kIfFirstInstall [NSString stringWithFormat:@"%@/Documents/ifCount.plist",NSHomeDirectory()]
+#define kUserFilePath [NSString stringWithFormat:@"%@/Documents/users.plist",NSHomeDirectory()]
+#define kInfoFilePath [NSString stringWithFormat:@"%@/Documents/info.plist",NSHomeDirectory()]
+
+
+
+#define INIT @"http://47.94.254.145/qnxl/index.php/api10/index/init/"
+
+
+//书籍接口：
+#define kBOOK @"index/getbook/"
+
+//题目接口：
+#define kQUESTION @"index/getques/"
+
+
+#define kSCORE @"score/index/"
+
+//获取验证码接口：
+#define kVERIFY @"phone/index/"
+
+//注册接口：
+#define kREGIST @"phone/regist/"
+
+//用户信息接口：
+#define kGETINFO @"user/getinfo/"
+
+//用户修改信息接口：
+#define kSETINFO @"user/setinfo/"
+
+//获取省份地区接口：
+#define kPRO @"area/getprovince/"
+
+//获取城市接口：
+#define kCITY @"area/getcity/"
+
+//获取区县接口：
+#define kAREA @"area/getdistrict/"
+
+
+#define kZhiShi @"know/getinfo"
+
+#import "VersionManager.h"
+
+//选项卡和导航条
+#import "PTTabBar.h"
+#import "PTNav.h"
+
+//选项卡的vc
+#import "PTTrainVC.h"
+#import "PTCheckVC.h"
+#import "PTLearnVC.h"
+#import "PTTaskVC.h"
+#import "PTMineVC.h"
+
+
+//三方库的
+#import "AppDelegate.h"
+#import "UIButton+WebCache.h"
+#import "UIImageView+WebCache.h"
+#import "CHNetWorkSingleton.h"
+#import "UIImage+YNImage.h"
+#import "UIView+Extension.h"
+#import "MJRefresh.h"
+#import "MJExtension.h"
+#import "UIScrollView+MJRefresh.h"
+
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
+#endif
+
+
+#ifdef DEBUG
+#define kDLog(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define kDLog(FORMAT, ...) nil
+#endif
+
+
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define kAutoSizeWidth(controlWidth) ((controlWidth) * kScreenWidth) / 1024
+
+#define kColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define kAlphaColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+#define kRandomColor [UIColor colorWithRed:arc4random() % 256 / 255.0 green:arc4random() % 256 / 255.0 blue:arc4random() % 256 / 255.0 alpha:0.7]
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
